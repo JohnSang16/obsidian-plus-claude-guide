@@ -312,10 +312,9 @@ Skills and commands both run in my main chat. An agent is a different animal: a 
 
 From what I already lean on, the obvious ones to spin up:
 
-- **research agent** — I have a `/research` skill that writes a knowledge note. As an agent it does the whole dig in isolation and drops back a finished, linked note, so the reading and dead ends never touch my main context.
-- **vault-audit agent** — my `lint` skill reads the entire vault for stale notes, missing pages, broken links. Perfect fan-out job: send an agent, get back the itemized list, don't watch it crawl every folder.
-- **job-scout agent** — the FAANG search is already several parallel lookups. Making it a real agent means verified roles come back as one clean list while the searching happens off to the side.
-- **person-lookup agent** — before a coffee chat, one agent researches the person and hands back a short brief. Isolated research in, distilled profile out.
+- **research agent** — instead of me sitting in Google, opening tabs and copy-pasting, I hand it a topic and it does the whole dig: pulls from the best, highly-rated sources for that specific thing, cites them, and logs it back as a knowledge note using the conventions and folder structure it already knows from my vault. Isolated research in, a finished linked note in the right place out.
+- **vault-audit agent** — my `lint` sweep reads the whole vault for stale notes, missing pages, broken links, drift. As an agent it just fixes the stale, obvious stuff on its own without asking, leans the list down using calls I've already made before, and only surfaces the handful of things that actually need my judgment. I get a short decision list, not a full audit dump.
+- **job-scout agent** — part job finder, part `lc-coach` for my whole career. It scours the most recent changes to anything FAANG-related in my vault, tells me the highest-ROI things to work on next so I stay focused, then hands back verified open roles plus a closing affirmation in the same voice the rest of the system runs on.
 
 ---
 
