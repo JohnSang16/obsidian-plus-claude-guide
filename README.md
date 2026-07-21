@@ -1,6 +1,6 @@
 # Obsidian + Claude Code: A Student's Second Brain
 
-My simple guide to creating your second brain
+simple & straightforward guide to offloading your brain to ai in honor of the transition to ai slavery
 
 ## The problem
 
