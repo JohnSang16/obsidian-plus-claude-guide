@@ -27,8 +27,6 @@ Before this, my actual situation looked like:
 - LeetCode practice that felt like a chore, no visible progress, no reason to protect the streak
 - Daily work and learnings at my internship that either went nowhere or sat in a notes app no agent could read
 
-Obsidian holds your notes as linked Markdown. Claude Code reads and writes to them as an agent. Together, that's a knowledge base that updates itself instead of one you maintain by hand.
-
 - [The idea](#the-idea): why Obsidian plus Claude Code beats either one alone
 - [Quick setup](#quick-setup): two installs, that's the whole technical lift
 - [Syncing across devices](#syncing-across-devices): Google Drive for desktops, what your phone actually gets
@@ -49,8 +47,6 @@ Obsidian is that place:
 - **The vault is just a folder.** Point Claude Code at it, full context, no uploads, no separate memory system to babysit.
 - **`[[wiki-links]]` connect notes.** Easy for an agent to create and follow, easy for you to browse in the graph view.
 - **It's agent-agnostic.** The vault outlives whatever tool you're using it with today.
-
-Obsidian holds the memory. Claude Code reads it, writes to it, acts on it.
 
 **Why this matters as a student:** constant context-switching (classes, internship, clubs, job search) means re-explaining your situation to an AI every session is wasted time. With a vault, the agent already knows your goals and active threads.
 
