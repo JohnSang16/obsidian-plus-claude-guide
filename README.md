@@ -27,6 +27,8 @@ Before this, my actual situation looked like:
 - LeetCode practice that felt like a chore, no visible progress, no reason to protect the streak
 - Daily work and learnings at my internship that either went nowhere or sat in a notes app no agent could read
 
+The vault fixes all of it. The rest of this guide, in order:
+
 - [The idea](#the-idea): why Obsidian plus Claude Code beats either one alone
 - [Quick setup](#quick-setup): two installs, that's the whole technical lift
 - [Syncing across devices](#syncing-across-devices): Google Drive for desktops, what your phone actually gets
