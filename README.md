@@ -237,7 +237,7 @@ Actually re-derive it, don't repeat the same wording. Conversation-only
 unless separately told to log it.
 ```
 
-**`/quiz`**: the two below are for school specifically, once the semester's in session. Active-recall quiz mode, one question at a time, grades honestly, tracks misses, closes with a score summary.
+**`/quiz`**: for school specifically, once the semester's in session. Active-recall quiz mode, one question at a time, grades honestly, tracks misses, closes with a score summary.
 
 ```
 # /quiz
@@ -245,16 +245,6 @@ One question at a time, don't move on until answered, no revealing the
 answer early. Grade honestly (correct/partial/wrong), briefly explain misses
 before the next question. Vary difficulty and angle. Default 8-10 questions
 per session, close with a score summary and what to revisit.
-```
-
-**`/hw-check`**: never solves a homework problem for me, makes me name the concept and attempt it solo first, then grades the reasoning, not just the answer.
-
-```
-# /hw-check
-Never solve the problem first. Ask what concept it's testing before doing
-anything else. Have me attempt it solo. If wrong, name where the reasoning
-broke, don't give the fix. Only reveal the full answer after a real attempt
-or two failed retries, and walk through it, don't just state it.
 ```
 
 **`/eod`**: closes the day, what shipped, what's pending, one grounded closing line, a nudge to log before I close out.
