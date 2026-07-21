@@ -1,5 +1,7 @@
 # Obsidian + Claude Code: A Student's Second Brain
 
+The super straightforward guide on my actual setup, no fluff, just what I use and why.
+
 ## The problem
 
 Before this, my actual situation looked like:
