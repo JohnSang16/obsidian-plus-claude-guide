@@ -20,7 +20,7 @@ Obsidian holds your notes as linked Markdown. Claude Code reads and writes to th
 - [Scaffolding from zero](#scaffolding-from-zero): let Claude Code interview you, then migrate what you already have
 - [My setup](#my-setup): the actual folder structure
 - [How I actually use it](#how-i-actually-use-it): the daily-full secretary, plus my most-used agents
-- [End notes](#end-notes): what mattered more than the folders themselves
+- [Notes](#notes): what mattered more than the folders themselves
 
 ---
 
@@ -258,7 +258,7 @@ sentence, not generic. Ask: "want to run /log before you close out?"
 
 ---
 
-## End notes
+## Notes
 
 - **The vault outlasts any single agent.** Markdown and Git survive tool churn, when a better agent shows up, it's a folder path, not a migration.
 - **`CLAUDE.md` is the highest-leverage file.** Everything downstream depends on it staying current.
