@@ -1,55 +1,79 @@
 # Obsidian + Claude Code: A Student's Second Brain
 
-A practical guide to pairing Obsidian (notes) with Claude Code (agent) into a self-maintaining personal knowledge base. Written from the perspective of a CS student juggling an internship, a student org, coursework, and a FAANG-prep grind, but the pattern generalizes to anyone who wants an agent that actually knows their life instead of starting from zero every session.
+A guide to pairing Obsidian (notes) with Claude Code (agent) so you get a knowledge base that maintains itself. Written from the perspective of a CS student running an internship, a student org, classes, and a FAANG-prep grind at the same time, but it works for anyone who wants an agent that actually knows their life instead of starting from zero every chat.
 
-This guide leans on [Daniel Nest's "Build Your Second Brain With Claude Code & Obsidian"](https://www.whytryai.com/) for the core concept and setup steps. What follows is my own working system built on top of that idea, plus what I've learned running it daily.
+This is my own use case, and it started from an unglamorous place. Before any of this I just had a pile of scattered Google Docs. Connecting the Drive MCP so Claude Code could pull that backlog straight into the vault was the actual unlock, not planning a perfect folder structure up front.
+
+What's below is my current scope, not a ceiling. It gets stronger the more MCPs, tooling, skills, and agents you wire into it. Take the pattern, not the exact folders, and tailor it to whatever your version of "juggling too many things" looks like.
 
 ---
 
 ## The idea
 
-Claude Code already reads your whole working folder as context. The gap is that a chat-based agent has no durable, agent-agnostic place to keep what it learns about you, structured in a way you (a human) can also browse, link, and skim.
+Claude Code already reads your whole working folder as context. What it doesn't have is a durable, agent-agnostic place to keep what it learns about you, somewhere structured enough that you can browse it too.
 
-Obsidian fills that gap:
+Obsidian is that place:
 
-- **Notes are Markdown.** Exactly what Claude Code already reads and writes natively.
-- **The vault is just a folder.** Point Claude Code at it and it has full context, no upload, no separate memory system to maintain by hand.
-- **`[[wiki-links]]` connect ideas across notes.** Trivial for an agent to create and follow, and visually browsable for you in Obsidian's graph view.
-- **It's agent-agnostic.** The vault outlives any single tool. If a better agent comes along next year, you point it at the same folder and keep going.
+- **Notes are Markdown.** Same format Claude Code already reads and writes.
+- **The vault is just a folder.** Point Claude Code at it, it has full context. No uploads, no separate memory system to babysit.
+- **`[[wiki-links]]` connect notes.** Easy for an agent to create and follow, easy for you to browse in the graph view.
+- **It's agent-agnostic.** The vault outlives whatever tool you're using it with today.
 
-In short: Obsidian is the durable, human-readable memory. Claude Code is the agent that reads it, writes to it, and acts on it.
+Obsidian holds the memory. Claude Code reads it, writes to it, acts on it.
 
-**Why this matters as a student specifically:** you're context-switching constantly (classes, internship, clubs, job search) and re-explaining your situation to an AI every session is wasted time. A vault + agent setup means the agent already knows your goals, your schedule, your ongoing threads, and can pull it all together on command instead of you reassembling it from memory every morning.
+**Why this matters as a student:** you're context-switching all day, classes, internship, clubs, job search, and re-explaining your situation to an AI every session is wasted time. With a vault, the agent already knows your goals and your active threads and can pull it together on command.
 
 ---
 
 ## Quick setup
 
-Two installs, then you're ready to scaffold:
+Two installs and you're ready to go:
 
 1. **Obsidian** (free): [obsidian.md](https://obsidian.md/download)
-2. **Claude Code**: install steps and IDE/terminal setup are covered in Daniel Nest's [Claude Code series](https://www.whytryai.com/) (start with his "getting Claude Code running" post if you're new to it)
+2. **Claude Code**: [claude.com/product/claude-code](https://claude.com/product/claude-code) for install and terminal/IDE setup
 
-Create your vault as its own folder, then open Claude Code from that same folder. That's the entire technical setup. Everything else below is structure and habit, not tooling.
+Make your vault its own folder, open Claude Code from that same folder. That's the whole technical setup. Everything past this point is structure and habit, not tools.
+
+---
+
+## Syncing across devices
+
+Hosting the vault in Google Drive is what actually made this usable across devices for me.
+
+- On a laptop, Claude Code points at the local Drive-synced folder like any other directory. Nothing special about it.
+- On a phone, the Drive app gives you the same files, and claude.ai's Google Drive connector can query straight into the vault.
+- If you only ever work from one machine, skip this. The moment you want to check or add to the vault from your phone, this is what makes it possible.
+
+Here's the actual reason Drive matters, not just GitHub: if the vault only lived in a GitHub repo, you'd have a stack of Markdown files you can browse in VS Code or on github.com. Useful for the agent, useful for history, but that's not the Obsidian app. Obsidian's own cross-device sync is a paid feature. Hosting the vault in Google Drive gets you the same result for free, Drive syncs the folder across your laptop and phone, and Obsidian just opens that synced folder as a vault on whichever device you're on. You get the real Obsidian UI, graph view, mobile app, all of it, everywhere, without paying for Obsidian Sync.
+
+Push the vault to GitHub too, it's solving a different problem: real version history, and a sanitized copy if you ever want to share your setup publicly. Drive is what makes the vault feel like one continuous app across devices, GitHub is what makes it durable and shareable.
+
+One more reason this pays off: with persistent memory, switching devices doesn't mean rebuilding your agents and context from scratch. The same commands and preferences carry over into a fresh Claude session on whatever device you're on, instead of you re-explaining your setup every time.
 
 ---
 
 ## Scaffolding from zero
 
-Don't hand-design the folder structure up front. Let Claude Code interview you and propose one instead, it'll ask about your goals, your commitments, and how you actually think, then draft a structure you approve before it writes anything.
+Don't hand-design the folder structure up front. Let Claude Code interview you instead. Ask about your goals, your commitments, how you actually think, then have it draft a structure and get your approval before it writes anything.
 
 Starter prompt:
 
 > I want to use Obsidian to help you and me better manage context. The vault is at [folder path]. Ask me about my goals, responsibilities, and how I want to work with you, one question at a time. Once we're aligned, propose a folder structure and starter files. Wait for my approval before creating anything.
 
-From there, the one file that matters most is **`CLAUDE.md`** at the vault root. Claude Code reads it at the start of every session, and it should define:
+The one file that actually matters is **`CLAUDE.md`** at the vault root. Claude Code reads it at the start of every session. It should define:
 
-- Who you are and what you're working on (link out to a profile/goals note, don't cram it all in-line)
-- The vault's folder structure, so the agent knows where things belong
-- Writing conventions (naming, linking style, tone)
-- Any standing behaviors you want automated (auto-commit, daily briefs, etc.)
+- who you are and what you're working on (link out to a profile/goals note, don't cram it in-line)
+- the vault's folder structure, so the agent knows where things go
+- writing conventions (naming, linking, tone)
+- any standing behaviors you want automated (auto-commit, daily briefs, whatever)
 
-Everything downstream, daily logs, knowledge notes, slash commands, grows out of that one file staying accurate.
+Everything downstream, daily logs, knowledge notes, slash commands, comes out of that one file staying accurate.
+
+### Already sitting on a pile of notes?
+
+Chances are you're not starting from a blank vault. For me it was a pile of Google Docs I'd been dumping stuff into for a while with no real structure. That's exactly where connecting the Google Drive MCP earns its keep: point Claude Code at the existing docs, and it pulls them into the vault as Markdown notes and reshapes them into your structure, instead of you copy-pasting for a weekend.
+
+This is honestly the main advantage of running Claude Code with MCPs wired in: what would've been a multi-day migration chore becomes one conversation. I did exactly this, connected the Drive MCP, told Claude Code to bring the docs over and restructure them, and it just handled it.
 
 ---
 
@@ -61,42 +85,56 @@ vault/
 ├── HOME.md                 # daily cockpit / quick links
 ├── _meta/                  # identity + goals the agent references constantly
 ├── memory/                 # Claude Code's persistent cross-session memory
-├── cox/                     # internship: daily logs, knowledge base, people, projects
+├── work/                    # internship/job: daily logs, knowledge base, people, projects
 ├── career/                  # FAANG prep, LeetCode tracker, resume, LinkedIn drafts
-├── progsu/                  # student org (Tech VP role): projects, people, knowledge
+├── org/                     # club or student org: projects, people, knowledge
 ├── personal/                 # finances, fitness, personal projects
 └── .claude/commands/         # slash commands, mirrored in _agents/commands/ by category
 ```
 
+Those trailing comments describe what's inside each folder (`work/` breaks down into its own `daily/`, `knowledge/`, `people/`, and `projects/` subfolders, and so on), not extra root-level items. Only the lines above are actually at the vault root.
+
 A few decisions that mattered more than the folder names:
 
-- **Knowledge notes are separate from daily logs.** Daily logs are a stream of what happened; knowledge notes are distilled, linked, written for "me in six months," and filed into topic subfolders (`cox/knowledge/cs/web`, `.../security`, etc.). The daily brief flags things worth promoting into a knowledge note instead of letting them rot in a log.
-- **`memory/` is not a task list.** It holds durable facts about how I work and what's been decided, not in-progress state. Tasks live in the actual planning tools; memory is for things that should still be true next month.
-- **Commands are organized twice on purpose.** A flat `.claude/commands/` folder so Claude Code can find them, and a categorized `_agents/commands/<category>/` mirror so a human browsing the repo can find them too. The tradeoff (keeping two copies in sync) is worth it for readability.
+- **Knowledge notes are separate from daily logs.** Daily logs are a stream of what happened. Knowledge notes are distilled, linked, written for "me in six months," and filed into topic subfolders (`work/knowledge/cs/web`, `.../security`, etc). The daily brief flags things worth promoting into a knowledge note instead of letting them rot in a log.
+- **`memory/` is not a task list.** It holds durable facts about how I work and what's been decided, not in-progress state. Tasks live in actual planning tools. Memory is for things that should still be true next month.
+- **Commands are organized twice on purpose.** A flat `.claude/commands/` folder so Claude Code can find them, a categorized `_agents/commands/<category>/` mirror so a human browsing the repo can find them too. Keeping two copies in sync is a real cost, worth it for readability.
 
 ---
 
 ## How I actually use it
 
-**`/daily`** — a morning brief that pulls calendar, email, and messages, cross-references my LeetCode tracker and a FAANG-prep priority dashboard, and surfaces only what's actionable today. The point isn't the individual pulls, it's that the agent already has my goals and priorities on file, so the brief is filtered through "does this move the needle on what I've already told you matters," not a generic digest.
+### `/daily-full` is the anchor of the whole system
 
-**Daily logging** — end-of-day, a `/eod`-style command writes a short shipped/pending/wins entry into the current week's log file. Cheap to do, and it's what turns into knowledge notes and future daily-brief context later. The agent flags patterns across logs (a topic showing up three days running, a person mentioned with no page yet) that I'd otherwise miss.
+Everything above exists to feed this one command. It's a full morning brief that pulls calendar, email, and messages, then cross-references trackers and priority dashboards that live in the vault, LeetCode progress, career-prep priorities, active projects, into a single filtered view of what actually matters today. Not a raw digest of every input.
 
-**Introspection and goal alignment** — because `CLAUDE.md` and `_meta/` encode my actual goals (not vague ones, specific ones with dates and named milestones), the agent can push back or reprioritize instead of just executing. Asking "what should I focus on this week" gets an answer grounded in what I've already committed to, not a generic productivity answer.
+Here's why it's worth building the rest of the vault around: since it's backed by durable notes instead of a blank chat, the brief already knows my active goals, my in-progress threads, and what I've already flagged as done or deprioritized. It gets sharper every week instead of repeating the same generic advice, and it does the "reassemble my whole situation" work that would otherwise eat the first ten minutes of every morning. It's also where introspection and goal alignment actually happen day to day, asking it "what should I focus on" gets an answer grounded in commitments already on file, not a generic productivity answer. If you only build one thing from this guide, build the version of this command that fits your life.
 
-**LeetCode coaching (`/lc`, `/lc-coach`)** — a structured coaching protocol that never hands over the answer directly, tracks streak/session state in a tracker file, and is deliberately the one command that stays encouraging regardless of how the session goes. Consistency in tone across sessions is something a plain chat can't give you; a vault-backed command can.
+### The logging workflow: how pages actually get added
 
-**School-specific agents (`/tutor`, `/quiz`, `/hw-check`)** — coursework support that reads what I'm actually taking and where I'm stuck from vault notes, instead of generic tutoring. `/hw-check` in particular is just a review pass against my own submitted work before I turn it in.
+The standard loop for adding to the vault, and this matters more than any folder structure:
 
-**Auto-commit as an audit trail** — every meaningful vault change gets its own commit. It sounds like overkill until you realize it turns the vault into a real history of how your thinking and priorities evolved, not just a static snapshot.
+- **Learning something new:** don't let the agent replace the thinking. Read the material, actually learn it, then log a short note to the vault after. The value isn't the note itself, it's that you now know you've touched the topic before. Weeks later, `/tutor` or a plain query against the vault pulls that note back up instead of you re-learning it from scratch or forgetting you ever covered it.
+- **Logging daily work:** if you're at an internship or job, logging what you did each day is one of the highest-value habits here. Just be careful with anything NDA-covered or confidential. Keep those entries high-level, the kind of problem, not proprietary specifics, or skip logging the sensitive part entirely and rely on your own memory for that. Even without specifics, the vault still works as a rough index of "when did I work on X."
+- **Logging people:** new coworkers, coffee chats, people met at a new org or internship. A running page per person means months later you're not trying to reconstruct who someone was from a two-line memory.
+- **Logging inspiration:** anything that sparks an idea, a post, an approach, worth a quick note even with no immediate use. It compounds. Searching the vault later for "have I seen something like this before" actually works because you wrote it down when it happened.
+
+Put together, this is the best note-taking app I've used, not because of any single feature, but because the notes aren't inert. They're linked, queryable, and the agent proactively pulls them into a brief or a coaching session instead of you having to go dig them out yourself.
+
+### Other commands worth the pattern
+
+**LeetCode coaching (`/lc`, `/lc-coach`):** a structured coaching protocol that never hands over the answer directly, tracks streak and session state in a tracker file, and stays encouraging regardless of how the session goes. Consistency in tone across sessions is something a plain chat can't give you, a vault-backed command can.
+
+**School-specific agents (`/tutor`, `/quiz`, `/hw-check`):** coursework support that reads what I'm actually taking and where I'm stuck from vault notes, instead of generic tutoring. `/hw-check` in particular is just a review pass against my own submitted work before I turn it in.
+
+**Auto-commit as an audit trail:** every meaningful vault change gets its own commit. Sounds like overkill until you realize it turns the vault into a real history of how your thinking and priorities evolved, not just a static snapshot.
 
 ---
 
 ## End notes
 
-- **The vault is worth more than any single agent.** Markdown + Git means it survives tool churn. When a better agent shows up, it's a folder path, not a migration.
-- **`CLAUDE.md` is the highest-leverage file in the whole system.** Everything else is downstream of it staying current. Review and edit it directly, don't just let it drift.
-- **Let the agent do the admin work.** Filing, linking, flagging stale notes, that's exactly the "busy work between having an idea and executing on it" that a self-maintaining vault is supposed to remove. If you're manually tagging and organizing, you've recreated the problem Obsidian-plus-agent was supposed to solve.
+- **The vault is worth more than any single agent.** Markdown and Git mean it survives tool churn. When a better agent shows up, it's a folder path, not a migration.
+- **`CLAUDE.md` is the highest-leverage file in the whole system.** Everything else is downstream of it staying current. Review and edit it directly, don't let it drift.
+- **Let the agent do the admin work.** Filing, linking, flagging stale notes, that's exactly the busy work between having an idea and executing on it that a self-maintaining vault is supposed to remove. If you're manually tagging and organizing, you've recreated the problem Obsidian plus agent was supposed to solve.
 - **Public and private don't mix in one repo.** If you're sharing your setup (like this guide), keep a sanitized version separate from the vault that has your actual daily logs, goals, and personal data in it.
-
-Credit: this system is my own build, but the core concept, and the nudge to actually try it, comes from Daniel Nest's [Why Try AI](https://www.whytryai.com/) newsletter.
+- **This is my scope, not the ceiling.** Swap in whatever MCPs, tooling, skills, and agents fit your own life, the pattern holds even when the folders don't.
