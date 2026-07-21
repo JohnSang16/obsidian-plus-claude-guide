@@ -24,10 +24,10 @@ The vault fixes all of it. The rest of this guide, in order:
 
 - [The idea](#the-idea): why Obsidian plus Claude Code beats either one alone
 - [Quick setup](#quick-setup): two installs, that's the whole technical lift
-- [Syncing across devices](#syncing-across-devices): Google Drive for desktops, what your phone actually gets
 - [Scaffolding from zero](#scaffolding-from-zero): let Claude Code interview you, then migrate what you already have
 - [My setup](#my-setup): the actual folder structure
 - [How I actually use it](#how-i-actually-use-it): the daily-full secretary, plus the skills/commands bench
+- [Syncing across devices](#syncing-across-devices): Google Drive for desktops, what your phone actually gets
 - [Notes](#notes): what mattered more than the folders themselves
 
 ---
