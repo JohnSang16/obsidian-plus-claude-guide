@@ -1,10 +1,8 @@
 # Obsidian + Claude Code: A Student's Second Brain
 
-A guide to pairing Obsidian (notes) with Claude Code (agent) so you get a knowledge base that maintains itself. Written from the perspective of a CS student running an internship, a student org, classes, and a FAANG-prep grind at the same time, but it works for anyone who wants an agent that actually knows their life instead of starting from zero every chat.
+Obsidian holds your notes as linked Markdown. Claude Code reads and writes to them as an agent. Together, you get a knowledge base that updates itself instead of one you maintain by hand. Built and used daily as a CS student running an internship, a student org, classes, and a FAANG-prep grind at once, but the pattern holds for anyone who wants an agent that actually knows their life instead of starting from zero every chat.
 
-This is my own use case, and it started from an unglamorous place. Before any of this I just had a pile of scattered Google Docs. Connecting the Drive MCP so Claude Code could pull that backlog straight into the vault was the actual unlock, not planning a perfect folder structure up front.
-
-What's below is my current scope, not a ceiling. It gets stronger the more MCPs, tooling, skills, and agents you wire into it. Take the pattern, not the exact folders, and tailor it to whatever your version of "juggling too many things" looks like.
+[The idea](#the-idea) · [Quick setup](#quick-setup) · [Syncing across devices](#syncing-across-devices) · [Scaffolding from zero](#scaffolding-from-zero) · [My setup](#my-setup) · [How I actually use it](#how-i-actually-use-it) · [End notes](#end-notes)
 
 ---
 
