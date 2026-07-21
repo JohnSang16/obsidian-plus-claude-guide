@@ -266,4 +266,4 @@ sentence, not generic. Ask: "want to run /log before you close out?"
 - **Public and private don't mix in one repo.** Keep a sanitized version separate from the vault with your real logs, goals, and personal data.
 - **This is my scope, not the ceiling.** Swap in whatever MCPs, tooling, skills, and agents fit your own life.
 
-> **I'm not responsible for what you do with this.** Anything sensitive, school records, other people's info, an employer's data, is on you to handle under whatever rules actually apply to it. This is a personal guide, not legal advice.
+> Whatever you do with this is on you. Sensitive stuff especially, school records, other people's info, employer data, handle it however you're actually supposed to.
