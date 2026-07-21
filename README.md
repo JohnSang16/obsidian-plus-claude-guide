@@ -38,15 +38,15 @@ Make your vault its own folder, open Claude Code from that same folder. That's t
 
 ## Syncing across devices
 
-Hosting the vault in Google Drive is what actually made this usable across devices for me.
+Hosting the vault in Google Drive is what actually made this usable across my laptops.
 
-- On a laptop, Claude Code points at the local Drive-synced folder like any other directory. Nothing special about it.
-- On a phone, the Drive app gives you the same files, and claude.ai's Google Drive connector can query straight into the vault.
-- If you only ever work from one machine, skip this. The moment you want to check or add to the vault from your phone, this is what makes it possible.
+- On a laptop, Claude Code points at the local Drive-synced folder like any other directory. Nothing special about it. Open the same folder as an Obsidian vault on a second laptop and Drive keeps both showing the same notes.
+- On a phone, it's more limited, and worth being straight about. The Obsidian mobile app can't just open an arbitrary Drive-synced folder as a vault, that native experience needs Obsidian's own paid Sync (or a similar sync-focused plugin). What Drive does give you on a phone is access to the raw files through the Drive app, and claude.ai's Google Drive connector can query straight into the vault from there, just not through the native Obsidian mobile UI.
+- If you only ever work from one machine, skip this.
 
-Here's the actual reason Drive matters, not just GitHub: if the vault only lived in a GitHub repo, you'd have a stack of Markdown files you can browse in VS Code or on github.com. Useful for the agent, useful for history, but that's not the Obsidian app. Obsidian's own cross-device sync is a paid feature. Hosting the vault in Google Drive gets you the same result for free, Drive syncs the folder across your laptop and phone, and Obsidian just opens that synced folder as a vault on whichever device you're on. You get the real Obsidian UI, graph view, mobile app, all of it, everywhere, without paying for Obsidian Sync.
+Here's the actual reason Drive matters, not just GitHub: if the vault only lived in a GitHub repo, you'd have a stack of Markdown files you can browse in VS Code or on github.com. Useful for the agent, useful for history, but that's not the Obsidian app. Obsidian's own cross-device sync is a paid feature. Hosting the vault in Google Drive gets you the desktop version of that for free, Drive syncs the folder across your laptops, and Obsidian just opens that synced folder as a vault on whichever machine you're on. You get the real Obsidian UI, graph view and all, on every desktop, without paying for Obsidian Sync.
 
-Push the vault to GitHub too, it's solving a different problem: real version history, and a sanitized copy if you ever want to share your setup publicly. Drive is what makes the vault feel like one continuous app across devices, GitHub is what makes it durable and shareable.
+Push the vault to GitHub too, it's solving a different problem: real version history, and a sanitized copy if you ever want to share your setup publicly. Drive is what makes the vault feel like one continuous app across desktop machines, GitHub is what makes it durable and shareable.
 
 One more reason this pays off: with persistent memory, switching devices doesn't mean rebuilding your agents and context from scratch. The same commands and preferences carry over into a fresh Claude session on whatever device you're on, instead of you re-explaining your setup every time.
 
