@@ -308,7 +308,7 @@ personal branch or merge on a shared one, stop on conflicts, push, confirm.
 
 ### Agents, where this goes next
 
-Skills and commands both run in my main chat. An agent is a different animal: a separate Claude with its own context window that goes off, does a big messy job alone, pulls whatever skills it needs, and hands back only the result, not the whole transcript. That keeps my main thread clean and lets me run several at once. The tell that something wants to be an agent, not a skill: it reads across a ton of files or the web, it runs long, and I only care about the final artifact.
+Skills and commands both run inside my main chat. An agent doesn't: it's a separate Claude with its own context window that goes off, does the whole messy job alone, pulls whatever skills it needs, and hands back just the result, not the transcript. That keeps my main thread clean and lets me run a few at once. The tell that something should be an agent instead of a skill: it reads across a ton of files or the web, it runs long, and I only care about what it hands back at the end.
 
 From what I already lean on, the obvious ones to spin up:
 
